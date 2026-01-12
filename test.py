@@ -1,9 +1,6 @@
 import cv2
 
-# 构建GStreamer管道字符串
-pipeline = 'udpsrc port=5600 ! application/x-rtp ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! appsink'
-
-cap = cv2.VideoCapture(pipeline, cv2.CAP_GSTREAMER)
+cap = cv2.VideoCapture('tcp://127.0.0.1:8080')
 
 if not cap.isOpened():
     print("无法打开视频流")
