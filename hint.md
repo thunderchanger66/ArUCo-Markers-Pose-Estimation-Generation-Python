@@ -6,3 +6,8 @@ gst-launch-1.0 udpsrc port=5600 ! application/x-rtp,encoding-name=H264 ! rtph264
 - gst-launch-1.0 udpsrc port=5600 ! application/x-rtp,encoding-name=H264 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! v4l2sink device=/dev/video10
 
 # 或者重新编译OpenCV源码，使能Gstreamer
+
+
+# 在虚拟环境中使用ROS2
+- source ./aruco_env/bin/activate
+- source /opt/ros/humble/setup.bash
